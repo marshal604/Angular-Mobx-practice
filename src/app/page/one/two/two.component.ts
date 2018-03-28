@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'yur-two',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoComponent implements OnInit {
 
-  constructor() { }
+  itemList: Array<string>;
 
-  ngOnInit() {
+  constructor(private router: Router) {
   }
 
+  ngOnInit() {
+    this.itemList = ['0 ~ 50', '50 ~ 200', '200 ~ 1000', '1000 up'];
+  }
+
+  goItem() {
+    this.router.navigate(['page/three']);
+  }
 }

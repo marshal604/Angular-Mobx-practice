@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'yur-one',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
 
-  constructor() { }
+  itemList: Array<string>;
 
-  ngOnInit() {
+  constructor(private router: Router) {
   }
 
+  ngOnInit() {
+    this.itemList = ['家電', '食物', '飲品', '3C'];
+  }
+
+  goPrice() {
+    this.router.navigate(['page/two']);
+  }
 }

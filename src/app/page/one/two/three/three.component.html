@@ -1,3 +1,5 @@
-<p>
-  three works!
-</p>
+<div>產品列表：</div>
+<mat-card *ngFor="let item of itemList">
+  <mat-card-title>名稱： {{item.name}}</mat-card-title>
+  <mat-card-subtitle>價位： {{item.price}}元</mat-card-subtitle>
+</mat-card>
