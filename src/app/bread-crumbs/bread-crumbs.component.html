@@ -1,3 +1,9 @@
-<p>
-  bread-crumbs works!
-</p>
+<nav *mobxAutorun>
+  <ul>
+    目前位置：
+    <li *ngFor="let bread of getBreadsCrumbs()">
+      <button mat-button color="primary" (click)="goToSelectPage(bread)">{{bread}}</button>
+      <span>></span></li>
+  </ul>
+</nav>
+
