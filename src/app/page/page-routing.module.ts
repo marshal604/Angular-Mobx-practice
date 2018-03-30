@@ -3,14 +3,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {OneComponent} from './one/one.component';
 import {TwoComponent} from './one/two/two.component';
 import {ThreeComponent} from './one/two/three/three.component';
+import {FourComponent} from './one/two/three/four/four.component';
 
 
 const pageRoute: Routes = [
-  {path: '', redirectTo: 'one'},
-  {path: 'one', component: OneComponent},
-  {path: 'two', component: TwoComponent},
-  {path: 'three', component: ThreeComponent}
-
+  {path: '', component: OneComponent},
+  {path: ':id', component: TwoComponent},
+  {path: ':id/:id', component: ThreeComponent},
+  {path: ':id/:id/:id', component: FourComponent}
 ];
 
 

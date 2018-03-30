@@ -6,7 +6,7 @@ import {MatButtonModule, MatCardModule} from '@angular/material';
   exports: [
     CommonModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
   ]
 })
 

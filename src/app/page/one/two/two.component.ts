@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BreadCrumbsStore} from '../../../store/bread-crumbs.store';
 
 @Component({
   selector: 'yur-two',
@@ -10,14 +11,25 @@ export class TwoComponent implements OnInit {
 
   itemList: Array<string>;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private breadCrumbsStore: BreadCrumbsStore, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.itemList = ['0 ~ 50', '50 ~ 200', '200 ~ 1000', '1000 up'];
+    this.activatedRoute.url.subscribe((el) => {
+      this.breadCrumbsStore.resetPos();
+      el.map((url) => {
+        this.addPos(url.path);
+      });
+    });
   }
 
-  goItem() {
-    this.router.navigate(['page/three']);
+  goItem(price: string) {
+    this.router.navigate([price], {relativeTo: this.activatedRoute});
+    this.addPos(price);
+  }
+
+  addPos(price: string) {
+    this.breadCrumbsStore.addPos(price);
   }
 }

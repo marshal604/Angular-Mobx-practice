@@ -5,13 +5,15 @@ import {ThreeComponent} from './one/two/three/three.component';
 import {SharedModule} from '../shared/shared.module';
 import {PageRoutingModule} from './page-routing.module';
 import {PageComponent} from './page.component';
+import { FourComponent } from './one/two/three/four/four.component';
 
 @NgModule({
   declarations: [
     PageComponent,
     OneComponent,
     TwoComponent,
-    ThreeComponent
+    ThreeComponent,
+    FourComponent
   ],
   imports: [
     SharedModule,

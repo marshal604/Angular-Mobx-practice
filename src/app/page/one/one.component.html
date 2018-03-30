@@ -1,2 +1,4 @@
-<div>選擇類型：</div>
-<button mat-button color="primary" *ngFor="let item of itemList" (click)="goPrice()">{{item}}</button>
+<main>
+  <div>選擇類型：</div>
+  <button mat-button color="primary" *ngFor="let item of itemList" (click)="goPrice(item)">{{item}}</button>
+</main>
